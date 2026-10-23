@@ -3,10 +3,9 @@
 ## Inicio rápido
 ```bash
 npm install
-cp .env.example .env   # completa las variables
+cp .env.example .env   
 npm run dev
-npm run build          # genera /dist para subir a tu hosting
-# Radio Energía Positiva
+npm run build          
 
 Sitio web de **Radio Energía Positiva**, hecho con React y Vite. Incluye reproductor en vivo, programación semanal, DJ’s, galería de videos de YouTube, chat en vivo con login de Google y redes sociales.
 
