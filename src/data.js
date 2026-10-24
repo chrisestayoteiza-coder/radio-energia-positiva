@@ -38,3 +38,22 @@ export function liveNow() {
     return min >= h * 60 + m && min < h * 60 + m + 120
   })
 }
+export function nextBroadcasts(n = 4) {
+  const { day, min } = chileNow()
+  const base = Date.now()
+  const out = []
+  for (let i = 0; i < 14 && out.length < n; i++) {
+    const wd = (day + i) % 7
+    const date = new Date(base + i * 864e5)
+    const fmt = (o) => date.toLocaleDateString('es-CL', { timeZone: 'America/Santiago', ...o })
+    DJS.filter((x) => x.time && x.days.includes(wd))
+      .sort((a, b) => a.time.localeCompare(b.time))
+      .forEach((dj) => {
+        const [h, m] = dj.time.split(':').map(Number)
+        if (i === 0 && h * 60 + m + 120 <= min) return // ya terminó hoy
+        if (out.length >= n) return
+        out.push({ dj, num: fmt({ day: 'numeric' }), mon: fmt({ month: 'short' }).replace('.', '').toUpperCase(), label: i === 0 ? 'Hoy' : i === 1 ? 'Mañana' : DN[wd] })
+      })
+  }
+  return out
+}
