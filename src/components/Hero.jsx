@@ -1,5 +1,6 @@
 import { DJS } from '../data.js'
 import { useLive } from '../player.js'
+import { Icon } from './Icons.jsx'
 
 const NOTES = ['♪', '♫', '♬']
 
@@ -21,7 +22,7 @@ export default function Hero({ player }) {
         <p className="tl">La mejor energía musical, las 24 horas</p>
         <div>
           <button className="btn big" onClick={player.toggle}>{player.playing ? '❚❚ Pausar' : '▶ Escuchar ahora'}</button>
-          <a className="btn ghost big" href="https://wa.me/56979444345" target="_blank" rel="noreferrer">Pedir una canción</a>
+          <a className="btn ghost big wa" href="https://wa.me/56979444345" target="_blank" rel="noreferrer"><Icon name="WhatsApp" size={20} /> Pedir una canción</a>
         </div>
         {player.msg && <p className="small warn" role="status">{player.msg}</p>}
       </div>

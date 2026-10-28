@@ -66,3 +66,10 @@ section.alt{clip-path:polygon(0 28px,100% 0,100% calc(100% - 28px),0 100%);margi
 section.alt{clip-path:polygon(0 18px,100% 0,100% calc(100% - 18px),0 100%)}
 .band{clip-path:polygon(0 0,100% 18px,100% 100%,0 calc(100% - 18px))}
 .band-in{justify-content:center;text-align:center}}
+
+.hero{min-height:min(620px,calc(100svh - 144px))}
+.hero-c{padding-block:40px 28px}
+#chat{padding-top:44px}
+/* Logos reales dentro de botones y círculos */
+.btn.wa{align-items:center;gap:8px}
+.ic svg,.rail a svg{display:block}

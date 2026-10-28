@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const LINKS = [['top', 'Inicio'], ['radio', 'La radio'], ['djs', 'DJ’s'], ['parrilla', 'Programación'], ['videos', 'Videos'], ['chat', 'Chat'], ['contacto', 'Contacto']]
+const LINKS = [['top', 'Inicio'], ['chat', 'Chat en vivo'], ['radio', 'La radio'], ['djs', 'DJ’s'], ['parrilla', 'Programación'], ['videos', 'Videos'], ['contacto', 'Contacto']]
 
 export default function Header({ onTheme }) {
   const [open, setOpen] = useState(false)

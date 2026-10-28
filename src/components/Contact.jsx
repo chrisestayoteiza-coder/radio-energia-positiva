@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { SOCIAL } from '../data.js'
+import { SocialIcon } from './Icons.jsx'
 
 export default function Contact() {
   const [name, setName] = useState('')
@@ -16,7 +17,7 @@ export default function Contact() {
         <div className="soc">
           {SOCIAL.map((s) => (
             <a key={s.name} className="card" href={s.url} target="_blank" rel="noreferrer">
-              <span className="ic" style={{ background: s.bg }}>{s.ic}</span>
+              <span className="ic" style={{ background: s.bg }}><SocialIcon s={s} size={26} /></span>
               <span><b>{s.name}</b><br /><span className="small">{s.handle}</span></span>
             </a>
           ))}
